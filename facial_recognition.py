@@ -6,7 +6,7 @@ import dlib
 import cv2
 
 trained_predictor_path = './predictor/shape_predictor_68_face_landmarks.dat'
-image_path = os.path.join('./img/', 'tanguy_9_area_20000_3')
+image_path = './img/tanguy.jpg'
 
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor(trained_predictor_path)

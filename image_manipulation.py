@@ -26,7 +26,7 @@ def create_frames_from_video(name, frame_rate=1, video_path='./video/', image_pa
         if frame_number % frame_rate == 0:
             print(frame_number)
             frame_name = name + '_' + str(frame_number) + '.jpg'
-            cv2.imwrite(os.path.join(image_path, frame_name), frame)
+            cv2.imwrite(os.path.join(image_path + name, frame_name), frame)
         frame_number += 1
     cap.release()
     cv2.destroyAllWindows()
