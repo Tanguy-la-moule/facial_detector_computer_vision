@@ -87,7 +87,7 @@ def treat_bounding_box(bbs, min_distance):
             return bbs
 
 
-def retrieve_best_bounding_boxes(bbs_by_frames, min_area, number=10):
+def retrieve_best_bounding_boxes(bbs_by_frames, min_area, number=5):
     ordered_bbs = []
     for bbs in bbs_by_frames:
         for bb in bbs:

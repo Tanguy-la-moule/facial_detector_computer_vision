@@ -1,5 +1,7 @@
 env
-img
+img/tanguy
+img/ben
 video_pipeline
+.idea
 __pycache__
 BenjaminMAHEU.py
