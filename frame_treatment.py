@@ -91,6 +91,7 @@ def retrieve_best_bounding_boxes(bbs_by_frames, min_area, number=5):
     ordered_bbs = []
     for bbs in bbs_by_frames:
         for bb in bbs:
+            print(bb)
             i = 0
             bb['a'] = bb['w'] * bb['h']
             while i < len(ordered_bbs) and bb['a'] < ordered_bbs[i]['a']:

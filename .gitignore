@@ -1,7 +1,5 @@
 env
-img/tanguy
-img/ben
+img
 pipeline
 .idea
 __pycache__
-BenjaminMAHEU.py

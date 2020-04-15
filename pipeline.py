@@ -1,6 +1,7 @@
 from image_manipulation import load_frame, load_frames
 from image_manipulation import make_video_from_frames, create_frames_from_video, save_pictures
 from frame_treatment import *
+from facial_detection import test_image
 
 
 def pass_frames_through_pipeline(name, frame_rate, frame_max, pipeline_path='./video/', image_path='./img/'):
@@ -96,3 +97,24 @@ def pass_frames_through_pipeline(name, frame_rate, frame_max, pipeline_path='./v
         pictures = get_pictures_from_bounding_boxes(best_bbs, original_images)
         save_pictures(pictures, name + '_9_area_' + str(min_area) + '_', image_path=pipeline_path)
     print('Done step 9 - extracting faces from corrected bounding boxes - saved ' + str(len(pictures)) + ' pictures')
+
+    proba_max = 0
+    name_max = 'unknown'
+    for img in pictures:
+        name, proba, preds = test_image(img)
+        print(name, proba, preds)
+        if proba_max < proba:
+            proba_max = proba
+            name_max = name
+
+    if name_max == 'tanguy':
+        print(name_max + ' is entering the room')
+        return False
+    else:
+        if proba_max == 0:
+            print('No one detected')
+            return False
+        else:
+            print('Someone unknowed is entering the room with ' + str(proba_max*100) +'% of probability')
+            return True
+
