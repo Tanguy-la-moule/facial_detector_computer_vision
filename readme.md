@@ -13,3 +13,8 @@ Scripts:
 - image_manipulation.py: methods for images manipulation
 - main.py: main program of the video, train the model, then extract frames from the testing videos, and finally passes it through the pipeline
 - pipeline.py: extract photos of faces from a video and try to recognize who is it
+
+
+To make it work:
+1/ create a "img" folder and a "pipeline" folder
+2/ run main.py
